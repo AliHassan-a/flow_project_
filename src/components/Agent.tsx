@@ -15,6 +15,8 @@ export interface AgentProps {
   isOrchestration: boolean;
 }
 export default function Agent(props: AgentProps) {
+  console.log(props, "props");
+
   const agent = props.agent;
   const [getMessagesAndConversations] = useStore(
     (state) => [state.getMessagesAndConversations],

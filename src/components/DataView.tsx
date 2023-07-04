@@ -35,7 +35,7 @@ export default function DataView() {
           </div>
         ) : (
           <>
-            {valid ? (
+            {!valid ? (
               <>
                 {/*
 
@@ -51,7 +51,7 @@ export default function DataView() {
                     <Agent
                       num_agents={agents.length + 1}
                       key={agent.id}
-                      agent={agent}
+                      agent={{ id: "" }}
                       isOrchestration={false}
                     ></Agent>
                   );

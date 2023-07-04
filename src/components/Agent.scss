@@ -1,0 +1,16 @@
+.agent{
+    display: flex;
+    flex-direction: column;
+    width: "20vw";
+}
+
+.agentHeader{
+    margin: 0 auto;
+}
+
+.agentContent{
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}

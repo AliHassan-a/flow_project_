@@ -1,0 +1,38 @@
+$primaryColor: #25293C;
+$headingColor: #D0D4F1C7;
+$secondaryColor: #2F3349F2;
+
+.parent-main {
+    background-color: $primaryColor;
+    display: flex;
+    // justify-content: space-between;
+    justify-content: space-between;
+
+    .header-title {
+        background-color: $secondaryColor;
+        color: $headingColor;
+        height: auto;
+        width: 250px;
+        padding: 0.875rem 0.875rem;
+        border-radius: 0.3rem;
+        font-size: 0.8rem;
+    }
+
+    .accord-parent {
+        width: 250px;
+        margin: 0.875rem 0;
+        padding: 0 0;
+        color: $headingColor;
+        background-color: $secondaryColor;
+        font-size: 0.8rem;
+
+        .expand-icon {
+            color: '#D0D4F1C7';
+            font-size: 1rem
+        }
+
+        .accord-title {
+            font-size: 0.8rem;
+        }
+    }
+}

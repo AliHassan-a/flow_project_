@@ -1,0 +1,47 @@
+$primaryColor: #25293C;
+$headingColor: #D0D4F1C7;
+$secondaryColor: #2F3349F2;
+
+
+.parent-topbar {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 1440px) {
+        padding: 1rem 1rem;
+
+    }
+    padding: 1.5rem 1rem;
+    background-color: $primaryColor;
+    border-bottom: 2px solid $headingColor;
+
+    .logo {
+        font-size: 1.875rem;
+        @media (max-width: 1440px) {
+            font-size: 1.3rem;
+
+        }
+        font-weight: 500;
+        color: white;
+
+    }
+
+    .input-fields {
+        display: flex;
+        gap: 1rem;
+        .wandB-run-input>input,
+        .problem-id select,
+        .Idx>select {
+            background-color: $secondaryColor;
+            color: $headingColor;
+            font-size: 0.875rem;
+            border-radius: 0.3rem;
+            padding: 0.7rem 1.1rem;
+            border: none;
+            outline: none;
+            @media screen and (min-width:2560px) {
+                font-size: 1.125rem;
+                padding: 1.25rem;
+            }
+        }
+    }
+}

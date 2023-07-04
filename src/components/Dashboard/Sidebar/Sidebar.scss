@@ -1,0 +1,15 @@
+$primaryColor: #25293C;
+$headingColor: #D0D4F1C7;
+$secondaryColor: #2F3349F2;
+
+.sidebar-parent {
+    height: 88vh;
+    background-color: $secondaryColor;
+    padding: 0.5rem;
+    width: 20%;
+
+    .accord-parent {
+        background-color: $secondaryColor;
+        margin: 0.5rem 0;
+    }
+}

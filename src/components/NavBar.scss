@@ -1,0 +1,27 @@
+#navbar-formgroup {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  padding-top: 10pt;
+  justify-items: center;
+  column-gap: 10pt;
+  min-height: 40pt;
+}
+
+.header {
+  border-bottom: 2px solid #00ff00;
+
+}
+
+#spacer {
+  flex: 1
+}
+
+#placeholder-logo {
+  flex: .4
+}
+
+#navbar-label {
+  position: relative;
+  top: 7pt;
+}

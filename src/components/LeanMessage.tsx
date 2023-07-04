@@ -1,58 +1,27 @@
 import React, { useState } from "react";
-import {
-  AgentSchema,
-  FlowAgentSchema,
-  FlowMessageSchema,
-  MessageSchema,
-} from "../state/interfaces";
+import { FlowAgentSchema, FlowMessageSchema } from "../state/interfaces";
 import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-  Box,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardHeader,
-  Divider,
-  Fab,
-  Icon,
   IconButton,
   Modal,
   Paper,
-  Popover,
   Toolbar,
   Tooltip,
   Typography,
 } from "@mui/material";
 import "./Message.scss";
-import AddchartIcon from "@mui/icons-material/Addchart";
 import { useStore } from "../state/store";
 import { darkTheme } from "./../App";
 import {
   AddOutlined,
   ChatBubble,
-  CloseOutlined,
-  CodeOffOutlined,
-  ContentCopyOutlined,
-  ContentCopySharp,
   DataArrayOutlined,
   ExpandMoreOutlined,
-  HeartBroken,
-  MenuBookOutlined,
-  PlusOneOutlined,
-  QuestionAnswer,
-  SpeakerNotesOffOutlined,
-  StorageOutlined,
-  Tag,
 } from "@mui/icons-material";
 import { shallow } from "zustand/shallow";
-import { JsonViewer } from "@textea/json-viewer";
-import JSONTreeView from "./JSONTreeView";
 import DataModal from "./DataModal";
-import { dark } from "@mui/material/styles/createPalette";
-
 export interface MessageProps {
   agent_owns_conversation: boolean; //
   created_by?: string;
@@ -60,22 +29,8 @@ export interface MessageProps {
   agent: FlowAgentSchema;
   message: FlowMessageSchema;
 }
-
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  overflow: "scroll",
-  p: 4,
-};
-
 export default function LeanMessage(props: MessageProps) {
-  const { created_by, conversation, message } = props;
+  const { message } = props;
 
   // state for popovers
   const [showMetadataPopover, setShowMetadataPopover] = useState(false);
@@ -101,7 +56,7 @@ export default function LeanMessage(props: MessageProps) {
     useStore((state) => state.collapsed[message.message_id], shallow) ?? true;
   const setCollapsed = useStore((state) => state.setCollapsed, shallow);
 
-  const isSelected = selectedMessage == message.message_id;
+  const isSelected = selectedMessage === message.message_id;
   const isAncestor = ancestors.includes(message.message_id);
   let borderColor = "white";
   if (isSelected) {

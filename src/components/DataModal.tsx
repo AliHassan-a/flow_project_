@@ -1,8 +1,7 @@
+import React from "react";
 import { CloseOutlined } from "@mui/icons-material";
 import { Box, IconButton, Typography } from "@mui/material";
-import React from "react";
 import JSONTreeView from "./JSONTreeView";
-import { JSONTree } from "react-json-tree";
 import { darkTheme } from "./../App";
 
 export interface DataModalProps {

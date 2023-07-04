@@ -1,17 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Agent from "./Agent";
 import { useStore } from "./../state/store";
-import { Button, CircularProgress } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { CircularProgress } from "@mui/material";
 import "./DataView.scss";
 import { shallow } from "zustand/shallow";
 import NavBar from "./NavBar";
 
 export default function DataView() {
-  const [data_id, sample_idx] = useStore(
-    (state) => [state.data_id, state.sample_idx],
-    shallow
-  );
   const [isValid, getAgents] = useStore(
     (state) => [state.isSelectionValid, state.getAgents],
     shallow

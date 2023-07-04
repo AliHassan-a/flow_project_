@@ -1,12 +1,9 @@
 import React, { ReactNode } from "react";
-import logo from "./logo.svg";
-import { DataSchema } from "./../state/interfaces";
-
 import TreeView from "@mui/lab/TreeView";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import TreeItem from "@mui/lab/TreeItem";
-import { Button, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import { ContentCopyOutlined } from "@mui/icons-material";
 
 export default function JSONTreeView(props: {

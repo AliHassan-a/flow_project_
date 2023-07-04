@@ -1,29 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useStore } from "./../state/store";
 import CircularProgress from "@mui/material/CircularProgress";
 import CachedIcon from "@mui/icons-material/Cached";
-import IconButton from "@mui/material/IconButton";
-import {
-  Autocomplete,
-  Button,
-  MenuItem,
-  Select,
-  TextField,
-} from "@mui/material";
+import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./LoadRun.scss";
 import NavBar from "./NavBar";
 
 export default function LoadRun() {
   const navigate = useNavigate();
-  const [fetchData] = useStore((state) => [state.fetchData]);
   const [loading] = useStore((state) => [state.loading]);
-  const [reset] = useStore((state) => [state.reset]);
   const [data] = useStore((state) => [state.data]);
   const [data_id] = useStore((state) => [state.data_id]);
-  const [setDataId] = useStore((state) => [state.setDataId]);
-  const [sample_idx] = useStore((state) => [state.sample_idx]);
-  const [setSampleNum] = useStore((state) => [state.setSampleIDX]);
 
   const data_ids = Object.keys(data);
   let num_samples = 0;
@@ -70,9 +58,7 @@ export default function LoadRun() {
           )}
         </div>
         {/* <Main /> */}
-      </div >
-
-
+      </div>
     </>
   );
 }

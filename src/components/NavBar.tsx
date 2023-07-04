@@ -1,45 +1,22 @@
 import * as React from "react";
-// import { jsonData } from "../utils/data";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { useNavigate } from "react-router-dom";
 import { useStore } from "../state/store";
 import { shallow } from "zustand/shallow";
-import { FormLabel } from "@mui/material";
 import {
   Autocomplete,
   FormGroup,
   InputAdornment,
-  Paper,
   TextField,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import "./NavBar.scss";
 import ReplayRoundedIcon from "@mui/icons-material/Replay";
-
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
-function isLoading(loading: boolean) {
-  if (loading) {
-    window.setTimeout(isLoading, 100);
-  } else {
-    return;
-  }
-}
-
 function NavBar() {
   const navigate = useNavigate();
   const [textInputState, setTextInputState] = useState("");
@@ -48,7 +25,6 @@ function NavBar() {
   const [isValid] = useStore((state) => [state.isSelectionValid], shallow);
   const fetchData = useStore((state) => state.fetchData, shallow);
   const data = useStore((state) => state.data, shallow);
-  const loading = useStore((state) => state.loading, shallow);
   const loadingError = useStore((state) => state.loadingError, shallow);
   const [setDataId] = useStore((state) => [state.setDataId], shallow);
   const [data_id] = useStore((state) => [state.data_id], shallow);
@@ -85,9 +61,7 @@ function NavBar() {
   });
 
   const [setSampleNum] = useStore((state) => [state.setSampleIDX]);
-  const valid = isValid();
   const wandb_run = useStore((state) => state.wandb_run, shallow);
-
   useEffect(() => {
     setTextInputState(wandb_run);
   }, [wandb_run]);

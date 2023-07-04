@@ -1,17 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useStore } from "./../state/store";
 import LeanMessage from "./LeanMessage";
 import "./Agent.scss";
-import {
-  AgentSchema,
-  FlowAgentSchema,
-  FlowMessageSchema,
-  MessageSchema,
-} from "../state/interfaces";
+import { FlowAgentSchema, FlowMessageSchema } from "../state/interfaces";
 import { shallow } from "zustand/shallow";
-import { Chip, IconButton, Paper, Tooltip, Typography } from "@mui/material";
+import { Chip, IconButton, Tooltip, Typography } from "@mui/material";
 import { Resizable } from "re-resizable";
-import { get } from "http";
 import { QuestionAnswer } from "@mui/icons-material";
 import { darkTheme } from "../App";
 
@@ -68,7 +62,7 @@ export default function Agent(props: AgentProps) {
             let agent_owns_conversation = false;
             if (messageOrConv.content.flow_runner) {
               agent_owns_conversation =
-                messageOrConv.content.flow_runner == agent.id;
+                messageOrConv.content.flow_runner === agent.id;
             }
 
             if (props.isOrchestration) {
@@ -76,7 +70,7 @@ export default function Agent(props: AgentProps) {
                 agent_owns_conversation = true;
               }
             }
-            if (messageOrConv.type == "message") {
+            if (messageOrConv.type === "message") {
               const message: FlowMessageSchema =
                 messageOrConv.content as FlowMessageSchema;
               // check if this message occurs in a conversation owned by this agent

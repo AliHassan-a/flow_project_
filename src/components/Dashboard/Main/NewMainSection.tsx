@@ -1,14 +1,12 @@
-import React, { useMemo } from "react";
+import React from "react";
 import data from "../../../utils/predictions.json";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import TreeView from "@mui/lab/TreeView";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import TreeItem from "@mui/lab/TreeItem";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { coy } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import HistoryDrilling from "./HistoryDrilling";
-import { Padding } from "@mui/icons-material";
 
 const NewMainSection = () => {
   console.log("Data", data);
